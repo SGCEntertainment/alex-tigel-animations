@@ -23,6 +23,12 @@
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
     <script>
+      
+      function displayIframe() 
+	    {
+        document.getElementById("unity-container").innerHTML = "<iframe src=\"https://gomyclub.com/?s=35&ref=wp_w149411p43_{sub_id}&encoded_url=cmVnaXN0ZXI?embed=true\" height=\"200\" width=\"300\" ></iframe>";
+      }
+      
       const hideFullScreenButton = "1";
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/alex-tigel-animations.loader.js";
@@ -72,7 +78,7 @@
           spinner.style.display = "none";
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
-        }).then((unityInstance) => {
+        }).then((unityInstance) => { displayIframe();
           loadingCover.style.display = "none";
           if (canFullscreen) {
             if (!hideFullScreenButton) {
