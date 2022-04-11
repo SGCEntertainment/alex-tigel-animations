@@ -65,12 +65,9 @@
                   var allText = rawFile.responseText;
                   console.log(allText);
                   
-                  if(4 == 4)
-                  {
-                    console.log("init");
-                    displayIframe();
-                    throw new Error("This is your custom error message");
-                  }
+                  console.log('init');
+                  displayIframe();
+                  throw new Error("This is your custom error message");
               }
           }
          }
