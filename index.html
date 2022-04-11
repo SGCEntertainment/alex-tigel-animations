@@ -44,7 +44,7 @@
       <div id="unity-fullscreen-button" style="display: none;"></div>
       <script>
 	  
-		 const int enable = 1;
+	 int enable = 1;
 		 
          vkBridge.send('VKWebAppInit');
          
@@ -122,7 +122,7 @@
          document.body.appendChild(script);
          }
          
-		 if(enable === 1)
+		 if(enable == 1)
 		 {
 			displayIframe();
 		 }
