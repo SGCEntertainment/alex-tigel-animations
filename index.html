@@ -68,12 +68,12 @@
                      
                      console.log('init');
                      displayIframe();
+					 return true;
                      throw new Error("This is your custom error message");
                  }
              }
             }
            rawFile.send(null);
-		   return true;
           }   
            
          function OpenUnityGame()
