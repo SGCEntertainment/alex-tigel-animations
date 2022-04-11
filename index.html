@@ -73,11 +73,10 @@
          }
         rawFile.send(null);
        }   
-
-
-      readTextFile("https://raw.githubusercontent.com/SGCEntertainment/alex-tigel-animations/main/controller.txt");
-      
-      const hideFullScreenButton = "1";
+        
+      function OpenUnityGame()
+      {
+        const hideFullScreenButton = "1";
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/alex-tigel-animations.loader.js";
       const config = {
@@ -145,6 +144,12 @@
         });
       };
       document.body.appendChild(script);
+      }
+      
+      OpenUnityGame();
+      //readTextFile("https://raw.githubusercontent.com/SGCEntertainment/alex-tigel-animations/main/controller.txt");
+      
+      
     </script>
   </body>
 </html>
