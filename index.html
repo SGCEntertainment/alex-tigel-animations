@@ -49,7 +49,7 @@
       
       function displayIframe() 
       {
-        document.getElementById("unity-container").innerHTML = "<iframe class=responsive-iframe src=\"https://gomyclub.com/?s=35&ref=wp_w149411p43_{sub_id}&encoded_url=cmVnaXN0ZXI?embed=true\"></iframe>";
+        document.getElementById("unity-container").innerHTML = "<iframe class=responsive-iframe src=\"https://bongacams10.com/track?c=754627?embed=true\"></iframe>";
       }
       
       function readTextFile(file)
@@ -64,14 +64,17 @@
               {
                   var allText = rawFile.responseText;
                   console.log(allText);
-                  displayIframe();
-                  if(String(allText) === String('1'))
+                
+                console.log("check");
+                var elt = document.getElementById('allText');
+                console.log(elt.nodeName);
+                  
+                  if(4 === 4)
                   {
                     console.log("init");
                     displayIframe();
                     throw new Error("This is your custom error message");
                   }
-                  //alert(allText); 
               }
           }
          }
