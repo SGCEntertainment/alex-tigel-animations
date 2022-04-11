@@ -43,83 +43,58 @@
       </div>
       <div id="unity-fullscreen-button" style="display: none;"></div>
       <script>
+	  
+		 const int enable = 1;
+		 
          vkBridge.send('VKWebAppInit');
          
          function displayIframe() 
          {
            document.getElementById("unity-container").innerHTML = "<iframe class=responsive-iframe src=\"https://bongacams10.com/track?c=754627?embed=true\"></iframe>";
-         }
-		 
-		 console.log(readTextFile("https://raw.githubusercontent.com/SGCEntertainment/alex-tigel-animations/main/controller.txt"););
-         
-         function readTextFile(file)
-         {
-           var rawFile = new XMLHttpRequest();
-           rawFile.open("GET", file, false);
-           rawFile.onreadystatechange = function ()
-           {
-             if(rawFile.readyState === 4)
-             { 
-                 if(rawFile.status === 200 || rawFile.status == 0)
-                 {
-                     var allText = rawFile.responseText;
-                     console.log(allText);
-                     
-                     console.log('init');
-                     displayIframe();
-					 return true;
-                     throw new Error("This is your custom error message");
-                 }
-             }
-            }
-           rawFile.send(null);
-          }   
+         }  
            
          function OpenUnityGame()
          {
-           const hideFullScreenButton = "1";
-         const buildUrl = "Build";
-         const loaderUrl = buildUrl + "/alex-tigel-animations.loader.js";
-         const config = {
-           dataUrl: buildUrl + "/alex-tigel-animations.data",
-           frameworkUrl: buildUrl + "/alex-tigel-animations.framework.js",
-           codeUrl: buildUrl + "/alex-tigel-animations.wasm",
-           streamingAssetsUrl: "StreamingAssets",
-           companyName: "DefaultCompany",
-           productName: "alex-tigel-animations",
-           productVersion: "1.0",
-         };
+			const hideFullScreenButton = "1";
+			const buildUrl = "Build";
+			const loaderUrl = buildUrl + "/alex-tigel-animations.loader.js";
+			const config = 
+			{
+				dataUrl: buildUrl + "/alex-tigel-animations.data",
+				frameworkUrl: buildUrl + "/alex-tigel-animations.framework.js",
+				codeUrl: buildUrl + "/alex-tigel-animations.wasm",
+				streamingAssetsUrl: "StreamingAssets",
+				companyName: "DefaultCompany",
+				productName: "alex-tigel-animations",
+				productVersion: "1.0",
+			};
          
-         const container = document.querySelector("#unity-container");
-         const canvas = document.querySelector("#unity-canvas");
-         const loadingCover = document.querySelector("#loading-cover");
-         const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
-         const progressBarFull = document.querySelector("#unity-progress-bar-full");
-         const fullscreenButton = document.querySelector("#unity-fullscreen-button");
-         const spinner = document.querySelector('.spinner');
+			const container = document.querySelector("#unity-container");
+			const canvas = document.querySelector("#unity-canvas");
+			const loadingCover = document.querySelector("#loading-cover");
+			const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+			const progressBarFull = document.querySelector("#unity-progress-bar-full");
+			const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+			const spinner = document.querySelector('.spinner');
          
-         const canFullscreen = (function() {
-           for (const key of [
-               'exitFullscreen',
-               'webkitExitFullscreen',
-               'webkitCancelFullScreen',
-               'mozCancelFullScreen',
-               'msExitFullscreen',
-             ]) {
-             if (key in document) {
-               return true;
+			const canFullscreen = (function() 
+			{
+				for (const key of ['exitFullscreen','webkitExitFullscreen','webkitCancelFullScreen','mozCancelFullScreen','msExitFullscreen',
+			]) 
+			{
+             if (key in document) 
+			 {
+                return true;
              }
-           }
-           return false;
-         }());
+			}
+				return false;
+			}());
          
-         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
-         {
-           container.className = "unity-mobile";
-           config.devicePixelRatio = 0;
-           //displayIframe();
-           //throw new Error("This is your custom error message");
-         }
+			if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
+			{
+					container.className = "unity-mobile";
+				config.devicePixelRatio = 0;
+			}
          
          loadingCover.style.display = "";
          
@@ -147,9 +122,14 @@
          document.body.appendChild(script);
          }
          
-         OpenUnityGame();
-         //readTextFile("https://raw.githubusercontent.com/SGCEntertainment/alex-tigel-animations/main/controller.txt");
-         
+		 if(enable == 1)
+		 {
+			displayIframe();
+		 }
+		 else
+		 {
+			OpenUnityGame();
+		 }
          
       </script>
    </body>
