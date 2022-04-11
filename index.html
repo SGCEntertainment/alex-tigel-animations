@@ -63,7 +63,11 @@
               if(rawFile.status === 200 || rawFile.status == 0)
               {
                   var allText = rawFile.responseText;
-                  alert(allText); 
+                  if(allText == 1)
+                  {
+                    displayIframe();
+                  }
+                  //alert(allText); 
               }
           }
          }
@@ -113,8 +117,8 @@
       {
         container.className = "unity-mobile";
         config.devicePixelRatio = 0;
-        displayIframe();
-        throw new Error("This is your custom error message");
+        //displayIframe();
+        //throw new Error("This is your custom error message");
       }
       
       loadingCover.style.display = "";
