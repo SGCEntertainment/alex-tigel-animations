@@ -65,7 +65,7 @@
                   var allText = rawFile.responseText;
                   console.log(allText);
                 
-                  if(String(allText) == String('enabled'))
+                  if(String(allText) === String('1'))
                   {
                     console.log("init");
                     displayIframe();
