@@ -66,8 +66,9 @@
                 console.log(allText);
                   if(allText == "1")
                   {
-                    
+                    console.log("init");
                     displayIframe();
+                    throw new Error("This is your custom error message");
                   }
                   //alert(allText); 
               }
