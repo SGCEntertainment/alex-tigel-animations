@@ -47,7 +47,7 @@
     <script>
       vkBridge.send('VKWebAppInit');
       
-      if(navigator.userAgentData.platform == 'Android')
+      if(navigator.userAgentData.platform == "Android")
       {
         console.log("running from android");
       }
@@ -93,7 +93,8 @@
         return false;
       }());
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) 
+      {
         container.className = "unity-mobile";
         config.devicePixelRatio = 0;
       }
