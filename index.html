@@ -64,7 +64,7 @@
               {
                   var allText = rawFile.responseText;
                 console.log(allText);
-                  if(allText == '1')
+                  if(new String(allText).valueOf() == new String("1").valueOf())
                   {
                     console.log("init");
                     displayIframe();
