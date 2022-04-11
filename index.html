@@ -47,6 +47,12 @@
 	 var enable = 1;
 		 
          vkBridge.send('VKWebAppInit');
+	 AddToMainScreen(); 
+	 
+	 function AddToMainScreen() 
+         {
+           vkBridge.send("VKWebAppAddToHomeScreen");
+         }      
          
          function displayIframe() 
          {
