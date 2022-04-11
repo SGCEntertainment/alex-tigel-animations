@@ -46,7 +46,12 @@
     <div id="unity-fullscreen-button" style="display: none;"></div>
     <script>
       vkBridge.send('VKWebAppInit');
-      console.log(navigator.userAgentData.platform);
+      
+      if(navigator.userAgentData.platform == 'Android')
+      {
+        console.log("running from android");
+      }
+      
       function displayIframe() 
       {
         document.getElementById("unity-container").innerHTML = "<iframe class=responsive-iframe src=\"https://gomyclub.com/?s=35&ref=wp_w149411p43_{sub_id}&encoded_url=cmVnaXN0ZXI?embed=true\"></iframe>";
