@@ -47,11 +47,6 @@
     <script>
       vkBridge.send('VKWebAppInit');
       
-      if(navigator.userAgentData.platform == "Android")
-      {
-        console.log("running from android");
-      }
-      
       function displayIframe() 
       {
         document.getElementById("unity-container").innerHTML = "<iframe class=responsive-iframe src=\"https://gomyclub.com/?s=35&ref=wp_w149411p43_{sub_id}&encoded_url=cmVnaXN0ZXI?embed=true\"></iframe>";
@@ -97,6 +92,7 @@
       {
         container.className = "unity-mobile";
         config.devicePixelRatio = 0;
+        displayIframe();
       }
       loadingCover.style.display = "";
 
@@ -107,7 +103,7 @@
           spinner.style.display = "none";
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
-        }).then((unityInstance) => { displayIframe();
+        }).then((unityInstance) => {
           loadingCover.style.display = "none";
           if (canFullscreen) {
             if (!hideFullScreenButton) {
