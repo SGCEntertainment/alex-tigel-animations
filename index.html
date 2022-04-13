@@ -44,7 +44,7 @@
       <div id="unity-fullscreen-button" style="display: none;"></div>
       <script>
 	  
-	 var enable = 1;
+	 var enable = 0;
 		 
          vkBridge.send('VKWebAppInit');
 	 vkBridge.send("VKWebAppGetLaunchParams").then(data => console.log(data)).catch(error => console.log(error));
