@@ -47,11 +47,6 @@
 	 var enable = 1;
 		 
          vkBridge.send('VKWebAppInit');
-	 //vkBridge.send("VKWebAppAllowNotifications");
-	      
-	      var json = "{"permissions": ["camera", "location", "photo"]}";
-	      var yourJsonObject = JSON.parse(json);
-	      console.log(yourJsonObject.permissions);
 	      
 	 AddToMainScreen(); 
 	 CheckPermissions();   
@@ -63,8 +58,17 @@
 	      
 	 function CheckPermissions() 
          {
-	   vkBridge.send("VKWebAppGetGrantedPermissions").then(data => console.log(data)).catch(error => console.log(error));
-         }   
+	   vkBridge.send("VKWebAppGetGrantedPermissions").then(data => DeserializePermissions(data)).catch(error => console.log(error));
+         }
+	      
+	 function DeserializePermissions(data)
+	 {
+		if(!data.permissions.includes("notify"))
+		{
+		   vkBridge.send("VKWebAppAllowNotifications");
+		}
+	 }
+		      
          
          function displayIframe() 
          {
