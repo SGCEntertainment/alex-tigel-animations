@@ -49,6 +49,10 @@
          vkBridge.send('VKWebAppInit');
 	 //vkBridge.send("VKWebAppAllowNotifications");
 	      
+	      var json = "{"permissions": ["camera", "location", "photo"]}";
+	      var yourJsonObject = JSON.parse(json);
+	      console.log(yourJsonObject.permissions);
+	      
 	 AddToMainScreen(); 
 	 CheckPermissions();   
 	 
