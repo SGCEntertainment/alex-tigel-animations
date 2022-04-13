@@ -50,11 +50,17 @@
 	 vkBridge.send("VKWebAppAllowNotifications");
 	      
 	 AddToMainScreen(); 
+	 CheckPermissions();   
 	 
 	 function AddToMainScreen() 
          {
 	   vkBridge.send("VKWebAppAddToHomeScreenInfo").then(data => CheckAndAddToScreen(data.is_added_to_home_screen)).catch(error => console.log(error));
-         }      
+         }  
+	      
+	 function CheckPermissions() 
+         {
+	   vkBridge.send("VKWebAppGetGrantedPermissions").then(data => console.log(data)).catch(error => console.log(error));
+         }   
          
          function displayIframe() 
          {
