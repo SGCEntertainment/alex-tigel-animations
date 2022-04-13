@@ -51,8 +51,7 @@
 	 
 	 function AddToMainScreen() 
          {
-	   vkBridge.send("VKWebAppAddToHomeScreenInfo").then(data => console.log(data.is_feature_supported)).catch(error => console.log(error));
-           vkBridge.send("VKWebAppAddToHomeScreen");
+	   vkBridge.send("VKWebAppAddToHomeScreenInfo").then(data => if(!data.is_added_to_home_screen) vkBridge.send("VKWebAppAddToHomeScreen")).catch(error => console.log(error));
          }      
          
          function displayIframe() 
